@@ -4,10 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import TodoScreen from './TodoScreen';
-import Calendar from './Calendar';
-import HomeScreen from './HomeScreen';
-import DetailScreen from './DetailScreen';
+import TodoScreen from './src/components/TodoScreen';
+import Calendar from './src/components/Calendar';
+import HomeScreen from './src/components/HomeScreen';
+import DetailScreen from './src/components/DetailScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
