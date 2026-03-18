@@ -1,4 +1,3 @@
-// App.js - Icon edit & delete nằm cùng hàng với ngày tháng + giờ
 import React, { useState, useEffect } from 'react';
 import {
   View,

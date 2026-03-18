@@ -8,6 +8,10 @@ import TodoScreen from './src/components/TodoScreen';
 import Calendar from './src/components/Calendar';
 import HomeScreen from './src/components/HomeScreen';
 import DetailScreen from './src/components/DetailScreen';
+import RealTimeClock from './src/components/RealTimeClock'
+import AlarmScreen from './src/components/AlarmScreen'
+import StopwatchScreen from './src/components/StopwatchScreen'
+import CountdownScreen from './src/components/CountdownScreen'
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -30,35 +34,38 @@ function HomeStack() {
   );
 }
 
-// function Tabs() {
-//   return (
-//     <Tab.Navigator>
-//       <Tab.Screen name="Todo" component={TodoScreen} />
-//       <Tab.Screen name="Calendar" component={Calendar} />
-//       <Tab.Screen name="HomeScreen" component={HomeScreen} />
-//     </Tab.Navigator>
-//   );
-// }
+function ClockTabs() {
+  return (
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
+      <Tab.Screen name='Đồng hồ' component={RealTimeClock}/>
+      <Tab.Screen name='Báo thức' component={AlarmScreen}/>
+      <Tab.Screen name='Đồng hồ bấm giờ' component={StopwatchScreen}/>
+      <Tab.Screen name='Đếm ngược' component={CountdownScreen}/>
+    </Tab.Navigator>
+  )
+}
+
 export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
 
         <Tab.Screen
-          name="Home"
+          name="HomeTab"
           component={HomeStack}
           options={{ headerShown: false }}
         />
 
         <Tab.Screen
-          name="Todo"
+          name="TodoTab"
           component={TodoScreen}
         />
 
         <Tab.Screen
-          name="Calendar"
+          name="CalendarTab"
           component={Calendar}
         />
+        <Tab.Screen name="ClockTab" component={ClockTabs}/>
 
       </Tab.Navigator>
     </NavigationContainer>
